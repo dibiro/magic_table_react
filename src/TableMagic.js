@@ -57,7 +57,7 @@ class TableMagic extends Component {
     return (
       <div className={'container-scroll ' + classContainer} style={{height}}>
         { isSearch &&
-          <div className='search-box'>
+          <div className='search-box' >
             <input type="text" value={search} name='search' placeholder={searchText ? searchText : 'Search'} onChange={handleInputChange} />
           </div>
         }
