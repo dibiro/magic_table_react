@@ -1,0 +1,225 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.container-scroll{
+  overflow: scroll;
+}
+.table-scroll {
+  position: relative;
+  width:100%;
+  z-index: 1;
+  margin: auto;
+  overflow: scroll;
+  height: 350px;
+}
+.table-scroll table {
+  width: 100%;
+  min-width: 1280px;
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.table-wrap {
+  position: relative;
+}
+.table-scroll thead,
+.table-scroll thead th {
+  background: #F8F9FA;
+  border: 2px !important;
+  border-color:#DEE2E6;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+/* safari and ios need the tfoot itself to be position:sticky also */
+.table-scroll tfoot,
+.table-scroll tfoot th,
+.table-scroll tfoot td {
+  background: #F8F9FA;
+  position: -webkit-sticky;
+  border: 2px !important;
+  border-color:#DEE2E6;
+  position: sticky;
+  z-index:4;
+  bottom: 0;
+}
+
+.first-child {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: #F8F9FA;
+  width: 220px !important;
+}
+thead .first-child,
+tfoot .first-child {
+  z-index: 5;
+}
+.search-box{
+  float: right;
+}
+.search-box input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+.confi-box{
+    float: left;
+}
+.confi-box button {
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(7, 7, 7);
+  background-color: rgb(238, 238, 238);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.confi-box button:hover {background-color: #e2e2e2}
+
+.confi-box button:active {
+  background-color: #e2e2e2;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.modal-container {
+  margin: 0 auto;
+  padding-top: 60px;
+  position: relative;
+  width: 160px;
+}
+
+.modal-container .modal-backdrop {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.2s ease-in;
+}
+
+.modal-container #modal-toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.modal-container .active {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  opacity: 0;
+}
+
+.modal-container .active ~ .modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.modal-container .active ~ .modal-backdrop .modal-content {
+  background-color: #fff;
+  max-width: 400px;
+  width: 100%;
+  height: 280px;
+  padding: 10px 30px;
+  position: absolute;
+  left: calc(50% - 200px);
+  top: 12%;
+  border-radius: 4px;
+  z-index: 999;
+  pointer-events: auto;
+  cursor: auto;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 400px) {
+
+.modal-container .active ~ .modal-backdrop .modal-content { left: 0; }
+}
+
+.modal-container .active ~ .modal-backdrop .modal-content .modal-close {
+  color: #666;
+  position: absolute;
+  right: 2px;
+  top: 0;
+  padding-top: 7px;
+  background: #fff;
+  font-size: 16px;
+  width: 25px;
+  height: 28px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal-container .active ~ .modal-backdrop .modal-content .modal-close.button {
+  top: initial;
+  bottom: 20px;
+  right: 20px;
+  background: #4CAF50;
+  color: #fff;
+  width: 50px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.modal-container .active ~ .modal-backdrop .modal-content .modal-close.button:hover {
+  color: #fff;
+  background: #1E824C;
+}
+
+.modal-container .active ~ .modal-backdrop .modal-content .modal-close:hover { color: #333; }
